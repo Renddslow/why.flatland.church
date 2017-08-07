@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans:300,400');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#wrapper {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background: #c0e0de;
+  min-height: 100vh;
+}
+
+header {
+  display: block;
+  width: 100%;
+  background-image: url('http://res.cloudinary.com/flatland-church/image/upload/v1502071928/why_agfjq4.png');
+  background-size: cover;
+  background-position: top center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+header h1 {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  color: #84131b;
+  text-align: center;
+  font-size: 5em;
+  margin: .5em 0 0;
+}
+
+header sub {
+  color: #84131b;
+  text-align: center;
+  display: block;
+  with: 100%;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+header .video-wrapper {
+  position: relative;
+  padding-bottom: 53%;
+  padding-top: 25px;
+  height: 0;
+  width: 95%;
+  display: block;
+  margin: 0 auto 2em;
+}
+
+header .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cta {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background: #84131b;
+  color: #efefef;
+  text-decoration: none;
+  padding: 1em 0;
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+  height: 2em;
+}
+
+section {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+section:nth-child(even) {
+  background: #162521;
+  color: #efefef;
+  padding: 3em 0;
+}
+
+section:nth-child(odd) {
+  background: #efefef;
+  color: #333;
+  padding: 3em 0;
+}
+
+section h2 {
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+  font-family: "Archivo Black", sans-serif;
+}
+
+section h2 em {
+  font-family: "Archivo Black", sans-serif;
+}
+
+section p {
+  width: 85%;
+  display: block;
+  margin: .5em auto;
+  text-align: left;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+section p a {
+  color: #333;
+  font-weight: bold;
+}
+
+section.introduction p {
+  font-style: italic;
+}
+
+.tag {
+  background: #2f97af;
+  color: #fff;
+  font-weight: 300;
+  display: block;
+  width: 30%;
+  text-align: center;
+  padding: .25em 0;
+  margin-bottom: .5em;
+}
+
+#payment-form {
+  width: 85%;
+  display: block;
+  margin: 1em auto;
+  font-weight: 300;
+}
+
+.form-row {
+	margin-top: 1em;
+}
+
+.form-row label {
+	cursor: pointer;
+}
+
+.books,
+#name,
+#email {
+  display: block;
+  color: #32325d;
+  line-height: 24px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  width: 5em;
+  outline: none;
+	box-sizing: border-box;
+}
+
+#name,
+#email {
+	width: 50%;
+}
+
+#payment-form #card-element,
+.books,
+#name,
+#email {
+  margin: .7em 0;
+}
+
+.StripeElement,
+.books,
+#name,
+#email {
+  background-color: white;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.cta.btn {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.books-display {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.books {
+  float: left;
+}
+
+.support-total {
+  margin: .7em 0;
+  padding: 5px 12px;
+  display: block;
+  float: left;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.support-total em {
+  font-style: normal;
+}
+
+footer {
+  width: 100%;
+  display: block;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 1em 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+footer > a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer span {
+  display: block;
+  width: 100%;
+  font-size: .9em;
+}
+
+footer span a {
+  color: #555;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 960px) {
+  header {
+    min-height: 150vh;
+  }
+
+  .cta {
+    margin: 3em auto;
+    width: 320px;
+    font-size: 1.1em;
+  }
+
+  .cta.btn {
+    width: 320px;
+  }
+
+  header .video-wrapper  {
+    width: 70%;
+    padding-bottom: 37%;
+  }
+
+  section h2 {
+    width: 50%;
+  }
+
+  section p {
+    width: 50%;
+  }
+
+  #payment-form {
+    width: 50%;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .tag {
+    width: 100px;
+    margin: auto;
+  }
+}
