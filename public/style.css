@@ -165,7 +165,7 @@ section.introduction p {
 
 #name,
 #email {
-	width: 50%;
+	width: 75%;
 }
 
 #payment-form #card-element,
@@ -182,6 +182,9 @@ section.introduction p {
   background-color: white;
   padding: 8px 12px;
   border: 1px solid transparent;
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 0;
 }
 
 .StripeElement--invalid {
@@ -279,6 +282,11 @@ footer span a {
   section p {
     width: 50%;
   }
+
+	#name,
+	#email {
+		width: 50%;
+	}
 
   #payment-form {
     width: 50%;
