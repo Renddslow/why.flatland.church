@@ -77,6 +77,11 @@
 		    <script src="https://js.stripe.com/v3/"></script>
 			  <form method="post" id="payment-form">
 					<div class="form-row">
+						<label for="recurring">Give Monthly</label>
+						<input type="checkbox" id="recurring" name="recurring" checked>
+						<p id="recurring-message">Your card will be charged every month on the <strong><em id="recurring-day"></em>th</strong>. You can change this at any time at <a href="https://my.flatland.church/giving">my.flatland.church</a>.</p>
+					</div>
+					<div class="form-row">
 			      <label for="name">
 			        Full Name
 			      </label>
@@ -104,8 +109,9 @@
 			      <div id="card-element"></div>
 			      <div id="card-errors" role="alert"></div>
 			    </div>
-			    <button class="cta btn">Give Now</button>
+			    <button class="cta btn" id="submit">Give Now</button>
 			  </form>
+				<p id="message-container"></p>
 		  </section>
 		  <footer>
 		    &copy; 2017 <a href="https://flatlandchurch.com/">Flatland Church</a>

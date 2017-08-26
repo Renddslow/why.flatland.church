@@ -5,6 +5,25 @@ $(() => {
     $(".support-total em").html(`$${total}`);
   });
 
+	var today = new Date().getDate();
+	var recurringDate = today > 28 ? 28 : today;
+	
+	$("#recurring-day").html(recurringDate);
+
+	if ($("#recurring").prop("checked")) {
+		$("#recurring-message").show();
+	} else {
+		$("#recurring-message").hide();
+	}
+
+	$("#recurring").change(()=> {
+		if ($("#recurring").prop("checked")) {
+			$("#recurring-message").show();
+		} else {
+			$("#recurring-message").hide();
+		}
+	});
+
   let stripe = Stripe('pk_test_Mxyh3oAiLIvNCLJ0AAaVjAPN');
   let elements = stripe.elements();
   let style = {
@@ -39,6 +58,8 @@ $(() => {
 	var form = document.getElementById('payment-form');
 	form.addEventListener('submit', function(event) {
 	  event.preventDefault();
+		$("#submit").prop("disabled", true);
+		$("#submit").html("Submitting...");
 
 	  stripe.createToken(card).then(function(result) {
 	    if (result.error) {
@@ -49,19 +70,33 @@ $(() => {
 					result.token,
 					$("#name").val().trim(),
 					$("#email").val().trim(),
-					$("#books").val()
+					$("#books").val(),
+					$("#recurring").prop("checked")
 				);
 	    }
 	  });
 	});
 });
 
-const stripeTokenHandler = (token, name, email, books) => {
+const stripeTokenHandler = (token, name, email, books, recurring) => {
 	let data = {
 		name: name,
 		email: email,
-		bookCount: books,
-		token: token.id
+		total: parseInt(books * 1000),
+		token: token.id,
+		recurring: recurring
 	};
-	console.log(data);
+	debugger;
+	$.ajax({
+		type: 'POST',
+		url: 'https://api.flatland.church/v1/campaigns/why/donations',
+		data: data,
+		success: function(res) {
+			$("#payment-form").hide();
+			$("#message-container").html(res.message);
+		},
+		error: function(res) {
+			$("#message-container").html();
+		}
+	});
 }

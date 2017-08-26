@@ -105,6 +105,10 @@ section h2 em {
   font-family: "Archivo Black", sans-serif;
 }
 
+em#recurring-day {
+	font-style: normal;
+}
+
 section p {
   width: 85%;
   display: block;
@@ -117,6 +121,10 @@ section p {
 section p a {
   color: #333;
   font-weight: bold;
+}
+
+section:nth-child(even) p a {
+  color: #84131b;
 }
 
 section.introduction p {
@@ -253,6 +261,12 @@ footer span {
 footer span a {
   color: #555;
   cursor: pointer;
+}
+
+p#message-container {
+	font-size: 1.5em;
+	font-weight: 100;
+	padding: 2em 0;
 }
 
 @media screen and (min-width: 960px) {
