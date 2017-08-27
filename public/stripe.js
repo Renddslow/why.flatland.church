@@ -24,7 +24,7 @@ $(() => {
 		}
 	});
 
-  let stripe = Stripe('pk_test_Mxyh3oAiLIvNCLJ0AAaVjAPN');
+  let stripe = Stripe('pk_live_pNcIV0BFJ5tqyI1vPkXzm0hr');
   let elements = stripe.elements();
   let style = {
     base: {
@@ -86,7 +86,6 @@ const stripeTokenHandler = (token, name, email, books, recurring) => {
 		token: token.id,
 		recurring: recurring
 	};
-	debugger;
 	$.ajax({
 		type: 'POST',
 		url: 'https://api.flatland.church/v1/campaigns/why/donations',
