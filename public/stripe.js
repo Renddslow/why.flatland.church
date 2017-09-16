@@ -84,11 +84,12 @@ const stripeTokenHandler = (token, name, email, books, recurring) => {
 		email: email,
 		total: parseInt(books * 1000),
 		token: token.id,
-		recurring: recurring
+		recurring: recurring,
+		fund: 'why'
 	};
 	$.ajax({
 		type: 'POST',
-		url: 'https://api.flatland.church/v1/campaigns/why/donations',
+		url: 'https://api.flatland.church/v1/donations',
 		data: data,
 		success: function(res) {
 			$("#payment-form").hide();
