@@ -89,14 +89,14 @@ const stripeTokenHandler = (token, name, email, books, recurring) => {
 	};
 	$.ajax({
 		type: 'POST',
-		url: 'https://api.flatland.church/v1/donations',
+		url: 'https://api.flatland.church/v2/donations',
 		data: data,
 		success: function(res) {
 			$("#payment-form").hide();
 			$("#message-container").html(res.message);
 		},
 		error: function(res) {
-			$("#message-container").html();
+			$("#message-container").html('There was an error processing your request. Please try again in a few minutes. If the problem persists contact us at admin@flatlandgroup.org.');
 		}
 	});
 }
